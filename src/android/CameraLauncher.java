@@ -764,7 +764,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                         destType == FILE_URI && !this.correctOrientation &&
                         getMimetypeForEncodingType().equalsIgnoreCase(mimeTypeOfGalleryFile))
                 {
-                    this.callbackContext.success(finalLocation);
+                    //Real Path is Start Ex /Storage/....
+                    this.callbackContext.success("file://" + finalLocation);
                 } else {
                     Bitmap bitmap = null;
                     try {
